@@ -1,0 +1,149 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="ecommerce_project.Default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+
+    <style type ="text/css">
+        .all
+        {
+            background-color:green;
+            border-radius: 0% 50% 0% / 0% 50% 50% 0%;
+
+            position:relative;
+            bottom: 20px;
+            left: 1px;
+            text-align:left;
+            color: white;
+            float: left;
+        }
+        .auto-style1 {
+            width: 250px;
+            align-content:center;
+            background-color:rgb(27, 0, 42);
+            
+        }
+        .auto-style2 {
+            width: 650px;
+            background-color:rgb(27, 0, 42);
+        }
+        .auto-style3 {
+            width: 139px;
+        }
+        div.auto-style3{
+            background-color:white;
+            width:650px;
+            
+        }
+        .item_color{
+            color:white;
+        }
+        
+    </style>
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<!--body starts here-->
+
+    <body style ="background-color:white">
+    <form id="form1" runat ="server">
+        <div>
+            <table style="width:1100px; margin:0 auto; background-color:antiquewhite">
+                <%--Header Starts Here--%>
+                <tr style ="height:50px; border-color:#5f98f3; background-color:white">
+                    <td class="auto-style1" style="text-align:center">
+                    <asp:Image ID="Image1" runat="server" Height="90px"
+                        ImageUrl="~/Images/logo .png" Width="150px"  />
+
+                    </td>
+                    <td align="center" class="auto-style2">
+           
+                        <div class="auto-style3" >  
+                        <h2><b>Welcome To Laptop Store</b></h2> 
+                       </div>
+        
+                    </td>
+    
+                 <td style="width:230px; text-align:center; background-color:rgb(27, 0, 42)" >
+                    
+                   <asp:ImageButton ID="ImageButton5" runat="server" Height="74px" style="text-align:left"
+                        ImageUrl="~/Images/cartt.png" Width="89px"  CausesValidation="false"
+                        onclick="ImageButton4_Click"/>
+                    <asp:Label ID="Label2" runat ="server" Font-Bold="true" Font-Size="X-Large"
+                        ForeColor="#5F98F3"></asp:Label>
+                             
+                </td>
+              </tr>
+                <%--Header Ends Here--%>
+                <%--Navigation Starts Here--%>
+                <tr style ="width:800px; height:40px; background-color:rgb(31, 41, 74); color:white">
+                    <td colspan="2" style=" text-align:center">
+                        
+                         <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" StaticSubMenuIndent="19px" ForeColor="White" >
+                             <Items>
+                                 <asp:MenuItem Text="HOME" Value="HOME" NavigateUrl="~/Default.aspx" ></asp:MenuItem>
+                                 <asp:MenuItem Text="REGISTER" Value="REGISTER" NavigateUrl="~/Register.aspx"></asp:MenuItem>
+                                 <asp:MenuItem Text="LOGIN" Value="LOGIN" NavigateUrl="~/Login.aspx"></asp:MenuItem>
+                                 <asp:MenuItem Text="CART" Value="CART" NavigateUrl="AddtoCart.aspx"></asp:MenuItem>
+                             </Items>
+                             <StaticHoverStyle  BorderColor="White" BorderStyle="Solid" ForeColor="White" Height="40px" />
+                            <StaticMenuItemStyle Font-Bold="true" Font-Size="Large" ForeColor="White" HorizontalPadding="60px" />
+                            <StaticSelectedStyle BackColor="#FF5050" BorderColor="#FF6666" BorderStyle="Inset" ForeColor="#666666" Height="40px" />
+                         </asp:Menu>
+                        </td>
+                    <td>
+                        <asp:Label ID="Label1" runat="server" Visible="False" Text="Label" Font-Bold="True"></asp:Label>&nbsp; &nbsp;
+                       <asp:ImageButton ID="logbutton" runat="server" Height="53px" ImageUrl="~/Images/lq.png" Width="65px" OnClick="logbutton_click"  />
+                    </td>
+        </tr>
+                <%--Navigation Ends Here--%>
+
+
+               <%-- <%--Ads Banner Starts Here--%>                <%--<tr style="width:1110px; height:310px;">
+
+                    <td colspan="3">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server"> 
+                        <ContentTemplate>
+                            
+                            <asp:Timer ID="Timer2" runat="server" Interval="2000" OnTick="Timer2_Tick"></asp:Timer>
+                            <asp:Image ID="Image2" runat="server" BackColor="White" BorderColor="Gray" BorderStyle="Double" Height="300px" Width="1140px" ImageAlign="Middle" />
+                        </ContentTemplate>
+                         </asp:UpdatePanel>
+                    </td>
+                </tr>--%>                  <%--Ads Banner Ends Here--%>
+                   <%--Your Content Starts Here--%>
+                <tr>
+                    <td colspan="3">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">    </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <%--Your Content Ends Here--%>
+                  <%--Footer Starts Here--%>
+                <tr style="width:1100px; height:25px; background-color:black; text-align:center; color:white">
+                    <td colspan="3">
+                        &copy; Connect with Us
+                        <br />
+                       <asp:ImageButton ID="ImageButton1" runat="server" Height="52px" 
+                        ImageUrl="~/Images/fq.png" PostBackUrl="https://www.facebook.com/" Width="64px" />&nbsp;
+                    <asp:ImageButton ID="ImageButton2" runat="server" Height="52px" ImageAlign="Top" 
+                        ImageUrl ="~/Images/tww.png" PostBackUrl="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D" Width="64px" />&nbsp;
+                    <asp:ImageButton ID="ImageButton3" runat="server" Height="52px"
+                        ImageUrl="~/Images/insta - Copy.png" PostBackUrl="https://www.instagram.com/accounts/login/" Width="64px" CausesValidation="false" />
+                    </td>
+                </tr>
+                <%--Footer Ends Here--%>
+                </table>
+            
+        </div>
+    </form>
+</body>
+
+</html>
